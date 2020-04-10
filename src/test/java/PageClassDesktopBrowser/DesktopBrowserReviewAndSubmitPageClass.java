@@ -27,25 +27,28 @@ public class DesktopBrowserReviewAndSubmitPageClass {
 	@FindBy(how=How.XPATH, using =  "//div[@kdfid='errmsg_summary1']//p")
 	public WebElement submissionErrorMessage;
 	
-	public boolean CheckRenewButtonExists()
+	public boolean CheckRenewButtonExists() throws Exception
 	{
-		
+		actionBrowserObj.WaitForElementVisible(modifyButton, 10);
 		if(actionBrowserObj.IsElementAvailable(modifyButton))
 			return true;
 		else
 			return false;
 	}
 	
-	public boolean CheckModifyButtonExists()
+	public boolean CheckModifyButtonExists() throws Exception
+	
 	{
+		actionBrowserObj.WaitForElementVisible(renewButton, 10);
 		if(actionBrowserObj.IsElementAvailable(renewButton))
 			return true;
 		else
 			return false;
 	}
 	
-	public String GetTextsubmissionErrorMessage()
+	public String GetTextsubmissionErrorMessage() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(submissionErrorMessage, 10);
 		return submissionErrorMessage.getText();
 	}
 		

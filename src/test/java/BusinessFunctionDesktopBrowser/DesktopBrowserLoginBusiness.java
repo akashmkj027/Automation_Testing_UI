@@ -1,30 +1,28 @@
 package BusinessFunctionDesktopBrowser;
 
-import java.io.IOException;
-
 import HelperClass.ReadPropertyFile;
 import PageClassDesktopBrowser.DesktopBrowserLoginPageClass;
 import TestCaseDesktopBrowser.automation.LoginTestCases;
-import Utility.UtilitiesWebDriver;
+import Utility.ActionDesktopBrowser;
 import Validation.AssertionsDesktopBrowser;
 
 public class DesktopBrowserLoginBusiness {
 
 	public static ReadPropertyFile readProprtyFile;
-	public static Boolean LoginInApplication(String sUserName, String sPassword) throws InterruptedException, IOException
+	public static Boolean LoginInApplication(String sUserName, String sPassword) throws Exception
 	{
 		readProprtyFile=new ReadPropertyFile();
 		DesktopBrowserLoginPageClass DesktopBrowserLoginPageObj = new DesktopBrowserLoginPageClass(LoginTestCases.driver);
 		if(sUserName.equalsIgnoreCase(readProprtyFile.GetBrowserLoginValidUserName()) && sPassword.equals(readProprtyFile.GetBrowserLoginValidPassword()))
 		{
 			DesktopBrowserLoginPageObj.SetValueForUserNameTextbox(sUserName);
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			DesktopBrowserLoginPageObj.ClickOnloginButton();
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			DesktopBrowserLoginPageObj.SetValueForpasswordTextbox(sPassword);
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			DesktopBrowserLoginPageObj.ClickOnloginButton();
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			System.out.println("Actual value: "+ DesktopBrowserLoginPageObj.FetchLoggedUserName());
 			AssertionsDesktopBrowser.ElementTextAssert(sUserName.toUpperCase(), DesktopBrowserLoginPageObj.FetchLoggedUserName() );
 			return true;
@@ -33,9 +31,9 @@ public class DesktopBrowserLoginBusiness {
 		else if (!sUserName.equalsIgnoreCase(readProprtyFile.GetBrowserLoginValidUserName()) && sPassword.equals(readProprtyFile.GetBrowserLoginValidPassword()))
 		{
 			DesktopBrowserLoginPageObj.SetValueForUserNameTextbox(sUserName);
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			DesktopBrowserLoginPageObj.ClickOnloginButton();
-			UtilitiesWebDriver.ExplicitWait(2);
+			ActionDesktopBrowser.ImplicitWait(2);
 			if(AssertionsDesktopBrowser.ElementTextAssert("We couldn't find that. Try again.", DesktopBrowserLoginPageObj.FetchInvalidUserErrorMessage()))
 				return true;
 			else 
@@ -45,11 +43,8 @@ public class DesktopBrowserLoginBusiness {
 		else if(sUserName.equalsIgnoreCase(readProprtyFile.GetBrowserLoginValidUserName()) && !sPassword.equals(readProprtyFile.GetBrowserLoginValidPassword()))
 		{
 			DesktopBrowserLoginPageObj.SetValueForUserNameTextbox(sUserName);
-			UtilitiesWebDriver.ExplicitWait(2);
 			DesktopBrowserLoginPageObj.ClickOnloginButton();
-			UtilitiesWebDriver.ExplicitWait(2);
 			DesktopBrowserLoginPageObj.SetValueForpasswordTextbox(sPassword);
-			UtilitiesWebDriver.ExplicitWait(2);
 			DesktopBrowserLoginPageObj.ClickOnloginButton();
 			if(AssertionsDesktopBrowser.ElementTextAssert("That login didn't work:", DesktopBrowserLoginPageObj.FetchInvalidPasswordErrorMessage()))
 				return true;
@@ -59,18 +54,14 @@ public class DesktopBrowserLoginBusiness {
 		return false;
 	}	
 	
-	public static Boolean LoginInApplication() throws InterruptedException, IOException
+	public static Boolean LoginInApplication() throws Exception
 	{
 		readProprtyFile = new ReadPropertyFile();
 		DesktopBrowserLoginPageClass DesktopBrowserLoginPageObj = new DesktopBrowserLoginPageClass(LoginTestCases.driver);
 		DesktopBrowserLoginPageObj.SetValueForUserNameTextbox(readProprtyFile.GetBrowserLoginValidUserName());
-		UtilitiesWebDriver.ExplicitWait(2);
 		DesktopBrowserLoginPageObj.ClickOnloginButton();
-		UtilitiesWebDriver.ExplicitWait(4);
 		DesktopBrowserLoginPageObj.SetValueForpasswordTextbox(readProprtyFile.GetBrowserLoginValidPassword());
-		UtilitiesWebDriver.ExplicitWait(1);
 		DesktopBrowserLoginPageObj.ClickOnloginButton();
-		UtilitiesWebDriver.ExplicitWait(4);
 		System.out.println("Actual value: "+ DesktopBrowserLoginPageObj.FetchLoggedUserName());
 		if(AssertionsDesktopBrowser.ElementTextAssert(readProprtyFile.GetBrowserLoginValidUserName().toUpperCase(), DesktopBrowserLoginPageObj.FetchLoggedUserName()))
 			return true;

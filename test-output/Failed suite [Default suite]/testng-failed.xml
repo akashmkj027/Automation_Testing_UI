@@ -5,10 +5,10 @@
     <classes>
       <class name="TestCaseDesktopBrowser.automation.SearchTestCases">
         <methods>
+          <include name="SearchCustomerBeGeoID"/>
           <include name="DataSetup"/>
-          <include name="TerminateDriverInstance"/>
           <include name="DataCleanUp"/>
-          <include name="SearchCustomerBusinessEntityID"/>
+          <include name="TearDown"/>
           <include name="SetPropertyForWebDriver"/>
         </methods>
       </class> <!-- TestCaseDesktopBrowser.automation.SearchTestCases -->

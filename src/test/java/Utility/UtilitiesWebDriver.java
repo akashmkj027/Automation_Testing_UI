@@ -18,8 +18,8 @@ import HelperClass.SmartLogger;
 public class UtilitiesWebDriver {
 	
 	public static WebDriver driver1;
-	public static ReadPropertyFile readPropertyFile;
-	public static SmartLogger logger = new SmartLogger();
+	public static ReadPropertyFile readPropertyFile=null;
+	public static ActionDesktopBrowser actionDesktopBrowserObj=null;
 	public static WebDriver OpenBrowser(WebDriver driver) throws Exception{
 	readPropertyFile= new ReadPropertyFile();
 	if(readPropertyFile.GetBrowserName().equalsIgnoreCase("firefox"))
@@ -40,7 +40,7 @@ public class UtilitiesWebDriver {
 			driver.manage().window().maximize();
 			//driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
-			logger.PrintInfo("Browser Selected: " + driver);
+			SmartLogger.PrintInfo("Browser Selected: " + driver);
 			return driver;
 	}
 		else if(readPropertyFile.GetBrowserName().equalsIgnoreCase("Edge"))
@@ -51,7 +51,7 @@ public class UtilitiesWebDriver {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
-			logger.PrintInfo("Browser Selected: " + driver);
+			SmartLogger.PrintInfo("Browser Selected: " + driver);
 			return driver;
 		}
 		else if(readPropertyFile.GetBrowserName().equalsIgnoreCase("IE"))
@@ -62,7 +62,7 @@ public class UtilitiesWebDriver {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
-			logger.PrintInfo("Browser Selected: " + driver);
+			SmartLogger.PrintInfo("Browser Selected: " + driver);
 			return driver;
 		}
 		else{
@@ -72,50 +72,49 @@ public class UtilitiesWebDriver {
 		
 	}
 	
-	public static void GetApplicationURL(WebDriver driver) throws InterruptedException, IOException
+	public static void GetApplicationURL(WebDriver driver) throws Exception
 	{
 		readPropertyFile= new ReadPropertyFile();
-		ActionDesktopBrowser actionDesktopBrowser = new ActionDesktopBrowser(GetWebDriverInstance());
+		actionDesktopBrowserObj = new ActionDesktopBrowser(GetWebDriverInstance());
 		String environment = readPropertyFile.GetExecutionEnvironment();
 		if(environment.equalsIgnoreCase("TS1"))
 		{
 			driver.get(readPropertyFile.GetTS1BrowserURL());
-			logger.PrintInfo("Environment Name: " + environment);
-			actionDesktopBrowser.HardWait(3);
+			SmartLogger.PrintInfo("Environment Name: " + environment);
 		}
 		else if (environment.equalsIgnoreCase("TS3"))
 		{
 			driver.get(readPropertyFile.GetTS3BrowserURL());
-			logger.PrintInfo("Environment Name: " + environment);
-			Thread.sleep(2000);
+			SmartLogger.PrintInfo("Environment Name: " + environment);
 		}
 	}
 	
-	public static void KillWebDriverInstance(WebDriver driver)
+	public static void KillWebDriverInstance(WebDriver driver) throws Exception
 	{
 		driver.close();
-		logger.PrintInfo("Closing Driver: " + driver.toString());
+		SmartLogger.PrintInfo("Closing Driver: " + driver.toString());
 		driver.quit();
-		logger.PrintInfo("Closing Browser");
+		SmartLogger.PrintInfo("Closing Browser");
 	}
 	
-	public static void ExplicitWait(int seconds) throws InterruptedException
+	public static void ExplicitWait(int seconds) throws Exception
 	{
-		Thread.sleep(seconds*1000);
+		
 	}
 	
-	public String GetCurrentUrl(WebDriver driver)
+	public String GetCurrentUrl(WebDriver driver) throws Exception
     {
         return driver.getCurrentUrl();
     }
 
-	public static void TakeScreenshot(String sTestcaseID) throws IOException
+	public static String TakeScreenshot(String sTestcaseID) throws Exception
 	{
 		File screenshot =((TakesScreenshot)driver1).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(screenshot, new File(Common.GetScreenshotPath() + "\\" + sTestcaseID + ".png"));
+		return Common.GetScreenshotPath() + "\\" + sTestcaseID + ".png";
 	}
 	
-	public static WebDriver GetWebDriverInstance()
+	public static WebDriver GetWebDriverInstance() throws Exception
 	{
 		return driver1;
 	}

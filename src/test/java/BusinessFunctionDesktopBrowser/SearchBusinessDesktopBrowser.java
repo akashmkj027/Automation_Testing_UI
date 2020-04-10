@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import HelperClass.ReadPropertyFile;
 import PageClassDesktopBrowser.SearchPageClass;
 import TestCaseDesktopBrowser.automation.SearchTestCases;
-import Utility.UtilitiesWebDriver;
+import Utility.ActionDesktopBrowser;
 import Validation.AssertionsDesktopBrowser;
 import Validation.QueryMasterDB;
 
@@ -26,23 +26,23 @@ public class SearchBusinessDesktopBrowser {
 	 * @throws InterruptedException Signals that an Interrupted exception of some sort has occurred.
 	 * @throws SQLException return an exception failure cause from Oracle JDBC and MySQL connection failure
 	 */
-	public static boolean SearchCustomerDetails(HelperClass.Enums.SearchCustomers searchType, String sSearchData, String priceList, String endCustomerCountry, String intendedUse, String multipleProductSku, String sMasterTableQuerries ) throws InterruptedException, SQLException 
+	public static boolean SearchCustomerDetails(HelperClass.Enums.SearchCustomers searchType, String sSearchData, String priceList, String endCustomerCountry, String intendedUse, String multipleProductSku, String sMasterTableQuerries ) throws Exception 
 	{
 		boolean status=false;
 		SearchPageClass SearchCustomerPageClassObj = new SearchPageClass(SearchTestCases.driver);
 		ArrayList<String> sResultUIdata = new ArrayList<String>();
 		ArrayList<String> sMasterDBdata = new ArrayList<String>();		
-		UtilitiesWebDriver.ExplicitWait(1);
+		ActionDesktopBrowser.ImplicitWait(1);
 		SearchCustomerPageClassObj.ClickOnSearchTabOnHomePage();
-		UtilitiesWebDriver.ExplicitWait(2);
+		ActionDesktopBrowser.ImplicitWait(2);
 		SearchCustomerPageClassObj.SelectCustomerSearchBy(searchType);
-		UtilitiesWebDriver.ExplicitWait(1);
+		ActionDesktopBrowser.ImplicitWait(1);
 		switch (searchType) {
 		case PARTY_ID:
 			SearchCustomerPageClassObj.SetValueSearchTextbox(sSearchData);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.ClickOnSearchButton();
-			UtilitiesWebDriver.ExplicitWait(3);
+			ActionDesktopBrowser.ImplicitWait(3);
 			sResultUIdata = SearchCustomerPageClassObj.FetchAllVisibleSearchResult();
 			if(AssertionsDesktopBrowser.AssertValueFromArrayStringList(sResultUIdata, sSearchData))
 				status=true;
@@ -51,13 +51,13 @@ public class SearchBusinessDesktopBrowser {
 			break;
 		case ACCOUNT_NAME:
 			SearchCustomerPageClassObj.SelectCustomerSearchBy(searchType);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SelectCountrySearchForAccountName(endCustomerCountry);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SetValueSearchTextbox(sSearchData);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.ClickOnSearchButton();
-			UtilitiesWebDriver.ExplicitWait(3);
+			ActionDesktopBrowser.ImplicitWait(3);
 			sResultUIdata = SearchCustomerPageClassObj.FetchAllVisibleSearchResult();
 			if(AssertionsDesktopBrowser.AssertValueFromArrayStringList(sResultUIdata, sSearchData))
 				status=true;
@@ -66,11 +66,11 @@ public class SearchBusinessDesktopBrowser {
 			break;
 		case BUSINESS_ENTITY_ID:
 			SearchCustomerPageClassObj.SelectCustomerSearchBy(searchType);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SetValueSearchTextbox(sSearchData);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.ClickOnSearchButton();
-			UtilitiesWebDriver.ExplicitWait(9);
+			ActionDesktopBrowser.ImplicitWait(9);
 			sResultUIdata = SearchCustomerPageClassObj.FetchAllVisibleSearchResult();
 			if(AssertionsDesktopBrowser.AssertValueFromArrayStringList(sResultUIdata, "45932817"))
 				status=true;
@@ -79,19 +79,19 @@ public class SearchBusinessDesktopBrowser {
 			break;
 		case CUSTOMER_ACCOUNT_NUMBER:
 			SearchCustomerPageClassObj.SelectCustomerSearchBy(searchType);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SetValueSearchTextbox(sSearchData);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SelectPriceList(priceList);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SelectEndCustomerCountry(endCustomerCountry);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SelectIntendedUse(intendedUse);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SetValueMultipleProductSku(multipleProductSku);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.ClickOnSearchButton();
-			UtilitiesWebDriver.ExplicitWait(3);
+			ActionDesktopBrowser.ImplicitWait(3);
 			sResultUIdata = SearchCustomerPageClassObj.FetchAllVisibleSearchResult();
 			if(AssertionsDesktopBrowser.AssertValueFromArrayStringList(sResultUIdata, "111045541"))
 				status=true;
@@ -100,11 +100,11 @@ public class SearchBusinessDesktopBrowser {
 			break;
 		case BEGEO_ID:
 			SearchCustomerPageClassObj.SelectCustomerSearchBy(searchType);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.SetValueSearchTextbox(sSearchData);
-			UtilitiesWebDriver.ExplicitWait(1);
+			ActionDesktopBrowser.ImplicitWait(1);
 			SearchCustomerPageClassObj.ClickOnSearchButton();
-			UtilitiesWebDriver.ExplicitWait(3);
+			ActionDesktopBrowser.ImplicitWait(3);
 			sResultUIdata = SearchCustomerPageClassObj.FetchAllVisibleSearchResult();
 			sMasterDBdata = QueryMasterDB.FetchBeGeoIDdetailsFromMasterTable(sMasterTableQuerries);
 			if(AssertionsDesktopBrowser.AssertValueFromMasterDataBase(sMasterDBdata, sResultUIdata, "Mimatch in UI and Backend Data for BEGEO ID Search Results"))

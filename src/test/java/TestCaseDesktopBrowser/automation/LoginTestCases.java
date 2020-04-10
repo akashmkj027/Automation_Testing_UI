@@ -76,7 +76,7 @@ public class LoginTestCases{
 
 	
 	@AfterMethod
-	public void TearDown()
+	public void TearDown() throws Exception
 	{
 		UtilitiesWebDriver.KillWebDriverInstance(LoginTestCases.driver);
 		

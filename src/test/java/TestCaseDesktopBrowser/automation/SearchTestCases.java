@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import BusinessFunctionDesktopBrowser.DesktopBrowserLoginBusiness;
 import BusinessFunctionDesktopBrowser.SearchBusinessDesktopBrowser;
 import HelperClass.SmartLogger;
+import HelperClass.TestBase;
 import Utility.MasterDataBase;
 import Utility.TestDataBase;
 import Utility.UtilitiesWebDriver;
@@ -25,7 +26,7 @@ import Utility.UtilitiesWebDriver;
  * @version 2.0
  */
 @Listeners(HelperClass.CustomListener.class)
-public class SearchTestCases{
+public class SearchTestCases extends TestBase{
 
 	public static WebDriver driver;
 	public static Statement statement;
@@ -40,7 +41,6 @@ public class SearchTestCases{
 	public static String sMasterTableQuerries = null;
 	public static String[] sTestID=null;
 	public ArrayList<String> sTestData = new ArrayList<String>();
-	public SmartLogger logger = new SmartLogger();
 	
 	/**
 	 * Method Sets up the test data values particular to TestID
@@ -80,12 +80,12 @@ public class SearchTestCases{
 	 * @throws ClassNotFoundException return an exception failure cause from Oracle JDBC and MySQL Class string mismacth
 	 */
 	@BeforeClass
-	public void DataSetup() throws SQLException, IOException, ClassNotFoundException
+	public void DataSetup() throws Exception
 	{
 		TestDataBase.ConnectToTestDB();
-		logger.PrintInfo("Connected to MasterDB");
+		SmartLogger.PrintInfo("Connected to MasterDB");
 		MasterDataBase.ConnectToMasterDB();
-		logger.PrintInfo("Connected to TestDB");
+		SmartLogger.PrintInfo("Connected to TestDB");
 	}
 	
 	
@@ -110,7 +110,7 @@ public class SearchTestCases{
 	 * Method implements the killing of Web driver instance once the test case is completed
 	 */
 	@AfterMethod
-	public void TearDown()
+	public void TearDown() throws Exception
 	{
 		UtilitiesWebDriver.KillWebDriverInstance(SearchTestCases.driver);	
 	}
@@ -125,7 +125,7 @@ public class SearchTestCases{
 		MasterDataBase.KillMasterDBdriverInstance();
 	}
 	
-	//@Test(testName ="TC008", description="TC008: Search Customer by Party ID")
+	@Test(testName ="TC008", description="TC008: Search Customer by Party ID")
 	public void SearchCustomerPartyID() throws SQLException
 	{
 		try {
@@ -133,17 +133,17 @@ public class SearchTestCases{
 			{
 				if(SearchBusinessDesktopBrowser.SearchCustomerDetails(HelperClass.Enums.SearchCustomers.PARTY_ID, sPartyID, sPriceLists, sEndCustomerCountry, sIntendedUse, sMultipleProductSku, sMasterTableQuerries)) 
 				{
-					logger.PrintInfo("TestCase Passed");
+					SmartLogger.PrintInfo("TestCase Passed");
 				}
 			}
 		}
 		catch(Exception ex){
-			logger.PrintError("");
+			SmartLogger.PrintError("");
  			Validation.AssertionsDesktopBrowser.AssertFailMessage("Exception Caused: " + ex.getLocalizedMessage());
 			}
 	}
 	
-	//@Test(testName ="TC009", description="TC009: Search Customer by Account Number")
+	@Test(testName ="TC009", description="TC009: Search Customer by Account Number")
 	public void SearchCustomerAccountNumber() throws IOException
 	{
 		try {
@@ -151,18 +151,17 @@ public class SearchTestCases{
 			{
 				if(SearchBusinessDesktopBrowser.SearchCustomerDetails(HelperClass.Enums.SearchCustomers.CUSTOMER_ACCOUNT_NUMBER, sCustomerAccountNumber, sPriceLists, sEndCustomerCountry, sIntendedUse, sMultipleProductSku, sMasterTableQuerries)) 
 				{
-					logger.PrintInfo("TestCase Passed");
+					SmartLogger.PrintInfo("TestCase Passed");
 				}
 			}
 		}
 		catch(Exception ex){
  			Validation.AssertionsDesktopBrowser.AssertFailMessage("Exception Caused: " + ex.getLocalizedMessage());
- 			logger.PrintError(ex.getLocalizedMessage());
+ 			SmartLogger.PrintError(ex.getLocalizedMessage());
 			}
 	}
 	
-	//@Test(testName ="TC010", description="TC010: Search Customer by Business Entity ID (BE ID)")
-	//Testing Git Commit
+	@Test(testName ="TC010", description="TC010: Search Customer by Business Entity ID (BE ID)")
 	public void SearchCustomerBusinessEntityID()
 	{
 		try {
@@ -170,13 +169,13 @@ public class SearchTestCases{
 			{
 				if(SearchBusinessDesktopBrowser.SearchCustomerDetails(HelperClass.Enums.SearchCustomers.BUSINESS_ENTITY_ID, sBusinessEntityID, sPriceLists, sEndCustomerCountry, sIntendedUse, sMultipleProductSku, sMasterTableQuerries)) 
 				{
-					logger.PrintInfo("TestCase Passed");
+					SmartLogger.PrintInfo("TestCase Passed");
 				}
 			}
 		} 	
 		catch(Exception ex){
  			Validation.AssertionsDesktopBrowser.AssertFailMessage("Exception Caused: " + ex.getLocalizedMessage());
- 			logger.PrintError(ex.getLocalizedMessage());
+ 			SmartLogger.PrintError(ex.getLocalizedMessage());
 			}
 	}
 	
@@ -188,17 +187,17 @@ public class SearchTestCases{
 			{
 				if(SearchBusinessDesktopBrowser.SearchCustomerDetails(HelperClass.Enums.SearchCustomers.ACCOUNT_NAME, sAccountName, sPriceLists, sEndCustomerCountry, sIntendedUse, sMultipleProductSku, sMasterTableQuerries)) 
 				{
-					logger.PrintInfo("TestCase Passed");
+					SmartLogger.PrintInfo("TestCase Passed");
 				}
 			}
 		}
 		catch(Exception ex){
  			Validation.AssertionsDesktopBrowser.AssertFailMessage("Exception Caused: " + ex.getLocalizedMessage());
- 			logger.PrintError(ex.getLocalizedMessage());
+ 			SmartLogger.PrintError(ex.getLocalizedMessage());
 			}
 	}
 	
-	@Test(testName ="TC012", description="TC012: Search Customer by BEGEO ID")
+	//@Test(testName ="TC012", description="TC012: Search Customer by BEGEO ID")
 		public void SearchCustomerBeGeoID() throws SQLException
 		{
 			try {
@@ -206,13 +205,13 @@ public class SearchTestCases{
 				{
 					if(SearchBusinessDesktopBrowser.SearchCustomerDetails(HelperClass.Enums.SearchCustomers.BEGEO_ID, sAccountName, sPriceLists, sEndCustomerCountry, sIntendedUse, sMultipleProductSku, sMasterTableQuerries)) 
 					{
-						logger.PrintInfo("TestCase Passed");
+						SmartLogger.PrintInfo("TestCase Passed");
 					}
 				}
 			}
 			catch(Exception ex){
 	 			Validation.AssertionsDesktopBrowser.AssertFailMessage("Exception Caused: " + ex.getLocalizedMessage());
-	 			logger.PrintError(ex.getLocalizedMessage());
+	 			SmartLogger.PrintError(ex.getLocalizedMessage());
 				}
 		}
 }

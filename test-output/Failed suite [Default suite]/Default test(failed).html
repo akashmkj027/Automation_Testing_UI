@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 14 15:01:16 IST 2019</td>
+<td>Started on:</td><td>Fri Apr 10 00:12:21 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>65 seconds (65705 ms)</td>
+<tr><td>Total time:</td><td>91 seconds (91312 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBusinessEntityID()'><b>SearchCustomerBusinessEntityID</b><br>Test class: TestCaseDesktopBrowser.automation.SearchTestCases<br>Test method: TC010: Search Customer by Business Entity ID (BE ID)</td>
-<td><div><pre>java.lang.AssertionError: Exception Caused: null
-	at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:50)
-	at TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBusinessEntityID(SearchTestCases.java:134)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1827371870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1827371870'><pre>java.lang.AssertionError: Exception Caused: null
+<td title='TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBeGeoID()'><b>SearchCustomerBeGeoID</b><br>Test class: TestCaseDesktopBrowser.automation.SearchTestCases<br>Test method: TC012: Search Customer by BEGEO ID</td>
+<td><div><pre>java.lang.AssertionError: Exception Caused: Cannot locate element with text: BEGEO ID
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;AKMUKHOP-15P1W&apos;, ip: &apos;10.107.73.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.1&apos;
+Driver info: driver.version: unknown
+	at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:51)
+	at TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBeGeoID(SearchTestCases.java:213)
+	at HelperClass.CustomListener.RetryFailedTestCases(CustomListener.java:75)
+	at HelperClass.CustomListener.onFinish(CustomListener.java:65)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace48390515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace48390515'><pre>java.lang.AssertionError: Exception Caused: Cannot locate element with text: BEGEO ID
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;AKMUKHOP-15P1W&apos;, ip: &apos;10.107.73.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.1&apos;
+Driver info: driver.version: unknown
 	at org.testng.Assert.fail(Assert.java:96)
-	at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:50)
-	at TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBusinessEntityID(SearchTestCases.java:134)
+	at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:51)
+	at TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerBeGeoID(SearchTestCases.java:213)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,12 +116,27 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 	at org.testng.TestNG.runSuites(TestNG.java:1049)
 	at org.testng.TestNG.run(TestNG.java:1017)
+	at HelperClass.CustomListener.RetryFailedTestCases(CustomListener.java:75)
+	at HelperClass.CustomListener.onFinish(CustomListener.java:65)
+	at org.testng.TestRunner.fireEvent(TestRunner.java:772)
+	at org.testng.TestRunner.afterRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:509)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>40</td>
-<td>TestCaseDesktopBrowser.automation.SearchTestCases@1a04f701</td></tr>
+<td>36</td>
+<td>TestCaseDesktopBrowser.automation.SearchTestCases@4f5b08d</td></tr>
 </table><p>
 </body>
 </html>

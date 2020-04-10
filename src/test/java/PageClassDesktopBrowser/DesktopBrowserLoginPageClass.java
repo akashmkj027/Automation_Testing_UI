@@ -36,36 +36,39 @@ public class DesktopBrowserLoginPageClass {
 	@FindBy(how=How.XPATH, using =  "//h3[contains(text(),\"That login didn't work:\")]")
 	public WebElement InvalidPasswordErrorMessage;
 	
-	public void SetValueForUserNameTextbox(String sUserName)
+	public void SetValueForUserNameTextbox(String sUserName) throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(userNameTextbox, 10);
 		actionBrowserObj.SendTextinTextbox(userNameTextbox, sUserName);
-		System.out.println("Added UserName in textbox");
 	}
 		
-	public void SetValueForpasswordTextbox(String sPassword)
+	public void SetValueForpasswordTextbox(String sPassword) throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(passwordTextbox, 10);
 		actionBrowserObj.SendTextinTextbox(passwordTextbox, sPassword);
-		System.out.println("Added Password in textbox");
 	}
 		
-	public void ClickOnloginButton()
+	public void ClickOnloginButton() throws Exception
 	{
+		actionBrowserObj.WaitForElementToBeClickable(loginButton, 10);
 		actionBrowserObj.clickOnElement(loginButton);
-		System.out.println("Clicked on Login Button");
 	}
 	
-	public String FetchLoggedUserName()
+	public String FetchLoggedUserName() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(loggedInUser, 10);
 		return actionBrowserObj.GetTextOfElement(loggedInUser);	
 	}
 	
-	public String FetchInvalidUserErrorMessage()
+	public String FetchInvalidUserErrorMessage() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(InvalidUserErrorMessage, 10);
 		return actionBrowserObj.GetTextOfElement(InvalidUserErrorMessage);	
 	}
 	
-	public String FetchInvalidPasswordErrorMessage()
+	public String FetchInvalidPasswordErrorMessage() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(InvalidPasswordErrorMessage, 10);
 		return actionBrowserObj.GetTextOfElement(InvalidPasswordErrorMessage);
 	}
 	

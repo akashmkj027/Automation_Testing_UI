@@ -8,9 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import Utility.ActionDesktopBrowser;
-import Utility.UtilitiesWebDriver;
 
 
 public class SearchPageClass {
@@ -77,15 +75,15 @@ public class SearchPageClass {
 		intendedUseDropDown.selectByVisibleText(sIntendedUse);
 	}
 	
-	public void SetValueMultipleProductSku(String sProductSku)
+	public void SetValueMultipleProductSku(String sProductSku) throws Exception
 	{
 		actionBrowserObj.SendTextinTextbox(multipleProductSku, sProductSku);
 	}
 	
-	public void SelectCustomerSearchBy(HelperClass.Enums.SearchCustomers searchBy) throws InterruptedException
+	public void SelectCustomerSearchBy(HelperClass.Enums.SearchCustomers searchBy) throws Exception
 	{
 		Select selectShowTypeDropDown = new Select(selectCustomerSearchBy);
-		UtilitiesWebDriver.ExplicitWait(1);
+		ActionDesktopBrowser.ImplicitWait(1);
 		switch (searchBy) 
 		{
 			case PARTY_ID:
@@ -108,18 +106,19 @@ public class SearchPageClass {
 		}
 	}
 	
-	public void SetValueSearchTextbox(String searchKeyword)
+	public void SetValueSearchTextbox(String searchKeyword) throws Exception
 	{
 		actionBrowserObj.SendTextinTextbox(searchTextbox, searchKeyword);
 	}
 	
-	public void ClickOnSearchButton()
+	public void ClickOnSearchButton() throws Exception
 	{
 		actionBrowserObj.clickOnElement(searchButton);
 	}
 	
-	public void ClickOnSearchTabOnHomePage()
+	public void ClickOnSearchTabOnHomePage() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(searchTab, 10);
 		actionBrowserObj.clickOnElement(searchTab);
 	}
 		

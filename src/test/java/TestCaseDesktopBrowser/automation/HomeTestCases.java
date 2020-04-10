@@ -107,7 +107,7 @@ public class HomeTestCases{
 	}
 	
 	@AfterMethod
-	public void TearDown()
+	public void TearDown() throws Exception
 	{
 		UtilitiesWebDriver.KillWebDriverInstance(HomeTestCases.driver);
 		

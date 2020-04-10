@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RetryFailedTestCases" verbose="1">
-<listeners>
-  <listener class-name="HelperClass.MyTransformer"/>
-</listeners>
-  <test name="RetryMultipleFailedTestCases">
-    <classes>
-      <!-- <class name="TestCaseRestAPI.automation.GetRequestTestCases"/> 
-      <class name="TestCaseDesktopBrowser.automation.HomeTestCases"/> 
-      <class name="TestCaseDesktopBrowser.automation.LoginTestCases"/>
-      <class name="TestCaseAndroidApp.automation.DiscoverTestCases"/>		-->
-      <class name="TestCaseDesktopBrowser.automation.SearchTestCases"/>
-      
-    </classes>
-  </test> <!-- Test -->
+<suite name="SearchCustomer - UI and CR Service" verbose="1">
+	<test name="Search Customer TestCases">
+		<classes>
+			<class name="HelperClass.TestBase" />
+			<class name="TestCaseDesktopBrowser.automation.SearchTestCases" />
+			<!-- <class name="TestCaseDesktopBrowser.automation.HomeTestCases" /> -->
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

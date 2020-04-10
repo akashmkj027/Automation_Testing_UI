@@ -1,81 +1,89 @@
-package HelperClass;
+package HelperClass; 
 
-import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.TestNG;
 import Utility.Common;
 import Utility.UtilitiesWebDriver;
 
 public class CustomListener implements ITestListener{
-
 	
+	//private static int counter = 0;
 	public void onTestStart(ITestResult result) {
-		
-		SmartReporter.ExtentReportHTML(result.getMethod().getDescription());
-	}
-
-	public void onTestSuccess(ITestResult result) {
-		SmartReporter.ExtentReportFlush();
-	}
-
-	public void onTestFailure(ITestResult result) {
 		String[] testID=null;
 		String description = result.getMethod().getDescription();
 		testID = description.trim().split(":");
 		try {
-			UtilitiesWebDriver.TakeScreenshot(testID[0]);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			SmartLogger.InitiateSmartLogging();
+			SmartLogger.PrintInfo("Initiating Testcase: " + testID[0]);
+	    	}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
-		SmartReporter.ExtentReportFlush();
-		
+	}
+
+	public void onTestSuccess(ITestResult result) {
+
+	}
+
+	public void onTestFailure(ITestResult result){
+		String[] testID=null;
+		String description = result.getMethod().getDescription();
+		testID = description.trim().split(":");
+		try {
+			String sPath = UtilitiesWebDriver.TakeScreenshot(testID[0]);
+			SmartLogger.PrintFailedTestCaseAndAttachScreenshot("FAILURE SCREENSHOT: ", sPath);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 	public void onStart(ITestContext context) {
 
 		try {
+			SmartLogger.InitiateSmartLogging();
 			SmartLogger.ClearExecutionLogsAndReports();
-			SmartReporter.ExtentReportHTML("Initiating TestBase");
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		} catch (InterruptedException e1) {
+			Common.CreateReportingFolders();	
+		}
+		catch (Exception e1) {
 			e1.printStackTrace();
 		}
-		try {
-			Common.CreateReportingFolders();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
 	}
 
-	public void onFinish(ITestContext context) {
-		
+	public void onFinish(ITestContext context)
+	{
+//		if (counter == 0) 
+//		{
+//			counter++;
+//			RetryFailedTestCases();
+//		}
 		try {
-			
 			SmartLogger.MoveLogsToDestination();
-		} catch (IOException e) {
+			SmartReporter.MoveExtentReportToDestination();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//write your testngfailed.xml code here
+		
 	}
-
 	
-
-	
-
+	public static void RetryFailedTestCases()
+	{
+		TestNG runner = new TestNG();
+		List<String> listOfFailedCases = new ArrayList<String>();
+		listOfFailedCases.add(System.getProperty("user.dir") + "\\test-output\\testng-failed.xml");
+		runner.setTestSuites(listOfFailedCases);
+		runner.run();
+	}
 }

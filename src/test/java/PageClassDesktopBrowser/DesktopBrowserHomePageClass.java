@@ -41,8 +41,9 @@ public class DesktopBrowserHomePageClass {
 	@FindBy(how=How.ID, using =  "errorMSG")
 	public WebElement importRequestErrorMessage;
 	
-	public ArrayList<String> FetchAllRequestIDVisibleOnScreen(String requestStatus)
+	public ArrayList<String> FetchAllRequestIDVisibleOnScreen(String requestStatus) throws Exception
 	{
+		
 		List<WebElement> allRequestOnScreen = AllRequestVisibleOnScreen(requestStatus);
 		ArrayList<String> requestID = new ArrayList<String>();
 		if(allRequestOnScreen.size()!=0)
@@ -56,16 +57,17 @@ public class DesktopBrowserHomePageClass {
 			return requestID=null;
 	}
 	
-	public void SelectShowTypeDropDown(String selectedValue) throws InterruptedException
+	public void SelectShowTypeDropDown(String selectedValue) throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(driver.findElement(By.name("filterValue")), 10);
 		Select selectShowTypeDropDown = new Select(driver.findElement(By.name("filterValue")));
-		UtilitiesWebDriver.ExplicitWait(1);
 		selectShowTypeDropDown.selectByVisibleText(selectedValue);
 	}
 	
 		
-	public void ClickOnSpecificRequestID(String requestID)
+	public void ClickOnSpecificRequestID(String requestID) throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(driver.findElement(By.xpath("//a[contains(text(),'" + requestID + "')]")), 10);
 		actionBrowserObj.clickOnElement(driver.findElement(By.xpath("//a[contains(text(),'" + requestID + "')]")));
 	}
 	
@@ -74,8 +76,9 @@ public class DesktopBrowserHomePageClass {
 		return driver.findElements(By.xpath("//td[contains(text(),'" + requestStatus + "')]//parent::tr//td//span//a"));
 	}
 	
-	public void ClickOnImportRequestButton()
+	public void ClickOnImportRequestButton() throws Exception
 	{
+		actionBrowserObj.WaitForElementVisible(ImportRequestButton, 10);
 		actionBrowserObj.clickOnElement(ImportRequestButton);
 	}
 	
@@ -96,17 +99,17 @@ public class DesktopBrowserHomePageClass {
 		
 	}
 	
-	public void ClickOnImportRightNow()
+	public void ClickOnImportRightNow() throws Exception
 	{
 		actionBrowserObj.clickOnElement(ImportRightNowCheckbox);
 	}
 	
-	public void ClickOnImportRequestUploadButton()
+	public void ClickOnImportRequestUploadButton() throws Exception
 	{
 		actionBrowserObj.clickOnElement(ImportRequestUploadButton);
 	}
 	
-	public String FetchImportRequestErrorMessage()
+	public String FetchImportRequestErrorMessage() throws Exception
 	{
 		return actionBrowserObj.GetTextOfElement(importRequestErrorMessage);
 	}	

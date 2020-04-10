@@ -1,0 +1,8 @@
+2020-04-10 14:20:46,950 [main] INFO HelperClass.SmartLogger - Connected to MasterDB
+2020-04-10 14:20:52,297 [main] INFO HelperClass.SmartLogger - Connected to TestDB
+2020-04-10 14:21:06,233 [main] INFO HelperClass.SmartLogger - Browser Selected: ChromeDriver: chrome on XP (ac737a6c0e32ecc9e7d642cd25c246c1)
+2020-04-10 14:21:16,130 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-10 14:21:18,252 [main] INFO HelperClass.SmartLogger - Initiating Testcase: TC008
+2020-04-10 14:21:41,763 [main] INFO HelperClass.SmartLogger - TestCase Passed
+2020-04-10 14:21:46,002 [main] INFO HelperClass.SmartLogger - Closing Driver: ChromeDriver: chrome on XP (ac737a6c0e32ecc9e7d642cd25c246c1)
+2020-04-10 14:21:46,906 [main] INFO HelperClass.SmartLogger - Closing Browser

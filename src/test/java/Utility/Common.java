@@ -9,28 +9,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 import HelperClass.ReadPropertyFile;
+import HelperClass.SmartLogger;
 
 public class Common{
 
 	public static Connection connection=null; 
 	public static Statement statement = null;
 	public static ReadPropertyFile readPropertyFile;
-	public static String sReportPath=System.getProperty("user.dir") + "\\Results\\ExecutionReport(" + DateTimeExctract() +")";
-	public static String sLogPath= sReportPath + "\\Logs";
-	public static String sScreenshotPath= sReportPath + "\\FailedCasesScreenshots";
+	public static String sExecutionFolderPath=System.getProperty("user.dir") + "\\Results\\ExecutionReport(" + DateTimeExctract() +")";
+	public static String sLogPath= sExecutionFolderPath + "\\SmartLogs";
+	public static String sScreenshotPath= sExecutionFolderPath + "\\FailedCasesScreenshots";
+	public static String sExtentReportPath= sExecutionFolderPath + "\\SmartReport";
 	
 	public static Statement ConnectToTestDataBase(Statement statement)
 	{
 		try{
 			readPropertyFile = new ReadPropertyFile();
 			Class.forName(readPropertyFile.GetDriverRegistrationMySQL().toString());
-			System.out.println("\n...Test DataBase Connected...");
 			connection = DriverManager.getConnection(readPropertyFile.GetDBConnectionURL(),readPropertyFile.GetUserNameDB(),readPropertyFile.GetPasswordDB());
 			statement = connection.createStatement();
 			return statement;
 			}
 		catch (Exception e) {
-			System.out.println("Exception caused: " + e);
 			return statement;
 		 	}
 	}
@@ -40,12 +40,11 @@ public class Common{
 	    if (statement1 != null)
 	    {
 	    	statement1.close();
-	    }
-	    
+	    } 
 	    if (connection !=null)
 	    {
 	    	connection.close();
-	    	System.out.println("Closed Test Data Base Connection");
+	    	//SmartLogger.PrintInfo("Closed Test Data Base Connection");
 	    }
 	}
 	
@@ -57,22 +56,20 @@ public class Common{
 	
 	public static void CreateReportingFolders() throws IOException
 	{
-		File file = new File(sReportPath);
+		File file = new File(sExecutionFolderPath);
 		if(file.mkdir())
 		{
-			System.out.println("Report Folder Created");
 			file = new File(sLogPath);
 			if(file.mkdir())
 			{
-				System.out.println("Log Folder Created");
 				file = new File(sScreenshotPath);	
-				file.mkdir();
+				if(file.mkdir())
+				{
+					file = new File(sExtentReportPath);
+					file.mkdir();
+				}
 			}
-			else
-				System.out.println("Log Folder not created");
 		}
-		else
-			System.out.println("Report Folder not created");
 	}
 	
 	public static String GetLogPath()
@@ -83,6 +80,11 @@ public class Common{
 	public static String GetScreenshotPath()
 	{
 		return sScreenshotPath;
+	}
+	
+	public static String GetExtentReportPath()
+	{
+		return sExtentReportPath; 
 	}
 	
 	public static String DateTimeExctract()
