@@ -54,6 +54,12 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
+		<dependency>
+		    <groupId>org.sikuli</groupId>
+		    <artifactId>sikuli-api</artifactId>
+		    <version>1.2.0</version>
+		</dependency>	
 		<!--==================================SQL AND JDBC CONNECTION DEPENDENCY===================================== -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>

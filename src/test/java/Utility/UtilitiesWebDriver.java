@@ -1,9 +1,7 @@
 package Utility;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -28,19 +26,19 @@ public class UtilitiesWebDriver {
 			driver = new FirefoxDriver();
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
+			SmartLogger.PrintInfo("Browser Selected: " + driver);
 			return driver;
 	}
 	else if(readPropertyFile.GetBrowserName().equalsIgnoreCase("chrome"))
 	{
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\Resources\\Drivers\\chromedriver_v78.exe");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\Resources\\Drivers\\chromedriver_v79.exe");
 			driver = new ChromeDriver();
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
 			//driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
-			SmartLogger.PrintInfo("Browser Selected: " + driver);
+			SmartLogger.PrintInfo("Browser Selected: " + driver.toString());
 			return driver;
 	}
 		else if(readPropertyFile.GetBrowserName().equalsIgnoreCase("Edge"))
@@ -51,7 +49,7 @@ public class UtilitiesWebDriver {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 			driver1=driver;
-			SmartLogger.PrintInfo("Browser Selected: " + driver);
+			SmartLogger.PrintInfo("Browser Selected: " + driver.toString());
 			return driver;
 		}
 		else if(readPropertyFile.GetBrowserName().equalsIgnoreCase("IE"))
@@ -66,7 +64,6 @@ public class UtilitiesWebDriver {
 			return driver;
 		}
 		else{
-			
 			throw new Exception("Browser name is not correct");
 		}
 		
@@ -96,13 +93,8 @@ public class UtilitiesWebDriver {
 		driver.quit();
 		SmartLogger.PrintInfo("Closing Browser");
 	}
-	
-	public static void ExplicitWait(int seconds) throws Exception
-	{
-		
-	}
-	
-	public String GetCurrentUrl(WebDriver driver) throws Exception
+
+	public static String GetCurrentUrl(WebDriver driver) throws Exception
     {
         return driver.getCurrentUrl();
     }

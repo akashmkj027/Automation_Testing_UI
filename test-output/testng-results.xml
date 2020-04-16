@@ -1,59 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="5" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-10T10:09:22Z" name="SearchCustomer - UI and CR Service" finished-at="2020-04-10T10:13:15Z" duration-ms="233420">
+  <suite started-at="2020-04-16T17:15:26Z" name="Default suite" finished-at="2020-04-16T17:19:21Z" duration-ms="234715">
     <groups>
     </groups>
-    <test started-at="2020-04-10T10:09:22Z" name="Search Customer TestCases" finished-at="2020-04-10T10:13:15Z" duration-ms="233420">
-      <class name="HelperClass.TestBase">
-        <test-method is-config="true" signature="reportSetUp()[pri:0, instance:HelperClass.TestBase@7c469c48]" started-at="2020-04-10T10:09:21Z" name="reportSetUp" finished-at="2020-04-10T10:09:22Z" duration-ms="458" status="PASS">
+    <test started-at="2020-04-16T17:15:26Z" name="Default test" finished-at="2020-04-16T17:19:21Z" duration-ms="234715">
+      <class name="TestCaseUI.PriceSearchTestCases">
+        <test-method is-config="true" signature="reportSetUp()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:15:25Z" name="reportSetUp" finished-at="2020-04-16T17:15:26Z" duration-ms="1333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportSetUp -->
-        <test-method is-config="true" signature="reportFlush()[pri:0, instance:HelperClass.TestBase@7c469c48]" started-at="2020-04-10T10:13:15Z" name="reportFlush" finished-at="2020-04-10T10:13:15Z" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reportFlush -->
-      </class> <!-- HelperClass.TestBase -->
-      <class name="TestCaseDesktopBrowser.automation.SearchTestCases">
-        <test-method is-config="true" signature="DataSetup()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:09:22Z" name="DataSetup" finished-at="2020-04-10T10:09:29Z" duration-ms="7461" status="PASS">
+        <test-method is-config="true" signature="DataSetup()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:15:28Z" name="DataSetup" finished-at="2020-04-16T17:16:06Z" duration-ms="38457" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DataSetup -->
-        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:09:29Z" name="SetPropertyForWebDriver" finished-at="2020-04-10T10:09:53Z" duration-ms="23599" status="PASS">
+        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:16:06Z" name="SetPropertyForWebDriver" finished-at="2020-04-16T17:16:06Z" duration-ms="139" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SearchCustomerAccountNumber status=FAILURE method=SearchTestCases.SearchCustomerAccountNumber()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6] output={null}]]]>
+                <![CDATA[[TestResult name=SearchInvalidPriceList status=SUCCESS method=PriceSearchTestCases.SearchInvalidPriceList()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetPropertyForWebDriver -->
-        <test-method signature="SearchCustomerAccountNumber()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:09:53Z" name="SearchCustomerAccountNumber" description="TC009: Search Customer by Account Number" finished-at="2020-04-10T10:10:20Z" duration-ms="27554" status="FAIL">
+        <test-method signature="SearchInvalidPriceList()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:16:06Z" name="SearchInvalidPriceList" description="TC002: Search Product Item of Distribution Catalog" finished-at="2020-04-16T17:17:38Z" duration-ms="91373" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchInvalidPriceList -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:17:38Z" name="TearDown" finished-at="2020-04-16T17:17:41Z" duration-ms="3414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:17:41Z" name="SetPropertyForWebDriver" finished-at="2020-04-16T17:17:41Z" duration-ms="136" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchSubscriptionItemDistributionCatalog status=SUCCESS method=PriceSearchTestCases.SearchSubscriptionItemDistributionCatalog()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetPropertyForWebDriver -->
+        <test-method signature="SearchSubscriptionItemDistributionCatalog()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:17:41Z" name="SearchSubscriptionItemDistributionCatalog" description="TC003: Search Subscription Item of Distribution Catalog" finished-at="2020-04-16T17:18:21Z" duration-ms="40153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchSubscriptionItemDistributionCatalog -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:21Z" name="TearDown" finished-at="2020-04-16T17:18:24Z" duration-ms="2790" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:24Z" name="SetPropertyForWebDriver" finished-at="2020-04-16T17:18:24Z" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchSubscriptionMandaotryDistributionCatalog status=FAILURE method=PriceSearchTestCases.SearchSubscriptionMandaotryDistributionCatalog()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetPropertyForWebDriver -->
+        <test-method signature="SearchSubscriptionMandaotryDistributionCatalog()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:24Z" name="SearchSubscriptionMandaotryDistributionCatalog" description="TC004: Search Subscription Mandatory Item of Distribution Catalog" finished-at="2020-04-16T17:18:39Z" duration-ms="14898" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Exception Caused: element click intercepted: Element <span kdfid="tpTgglBtn2" kdfapp="edia" kdfpage="header" id="tpTgglBtn2" class="raised" style="float:left;" onclick="toggleTopButton(2);">...</span> is not clickable at point (434, 101). Other element would receive the click: <div class="icwModalWashout" id="icwModalWashout1586513410220" style="height: 873px; width: 1583px;">...</div>
-  (Session info: chrome=79.0.3945.88)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'AKMUKHOP-15P1W', ip: '10.107.73.229', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\akmukhop\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56745}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2d1f8fb7f7a0b77697237e486a681a89]]>
+              <![CDATA[Exception Caused: Index 0 out of bounds for length 0]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Exception Caused: element click intercepted: Element <span kdfid="tpTgglBtn2" kdfapp="edia" kdfpage="header" id="tpTgglBtn2" class="raised" style="float:left;" onclick="toggleTopButton(2);">...</span> is not clickable at point (434, 101). Other element would receive the click: <div class="icwModalWashout" id="icwModalWashout1586513410220" style="height: 873px; width: 1583px;">...</div>
-  (Session info: chrome=79.0.3945.88)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'AKMUKHOP-15P1W', ip: '10.107.73.229', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\akmukhop\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56745}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2d1f8fb7f7a0b77697237e486a681a89
+              <![CDATA[java.lang.AssertionError: Exception Caused: Index 0 out of bounds for length 0
 at org.testng.Assert.fail(Assert.java:96)
-at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:51)
-at TestCaseDesktopBrowser.automation.SearchTestCases.SearchCustomerAccountNumber(SearchTestCases.java:159)
+at Validation.AssertionsDesktopBrowser.AssertFailMessage(AssertionsDesktopBrowser.java:38)
+at TestCaseUI.PriceSearchTestCases.SearchSubscriptionMandaotryDistributionCatalog(PriceSearchTestCases.java:214)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -84,54 +104,39 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchCustomerAccountNumber -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:10:21Z" name="TearDown" finished-at="2020-04-10T10:10:23Z" duration-ms="2120" status="PASS">
+        </test-method> <!-- SearchSubscriptionMandaotryDistributionCatalog -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:40Z" name="TearDown" finished-at="2020-04-16T17:18:51Z" duration-ms="11507" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:10:23Z" name="SetPropertyForWebDriver" finished-at="2020-04-10T10:10:44Z" duration-ms="20964" status="PASS">
+        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:51Z" name="SetPropertyForWebDriver" finished-at="2020-04-16T17:18:52Z" duration-ms="129" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SearchCustomerBusinessEntityID status=SUCCESS method=SearchTestCases.SearchCustomerBusinessEntityID()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6] output={null}]]]>
+                <![CDATA[[TestResult name=SearchValidPriceList status=SUCCESS method=PriceSearchTestCases.SearchValidPriceList()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetPropertyForWebDriver -->
-        <test-method signature="SearchCustomerBusinessEntityID()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:10:44Z" name="SearchCustomerBusinessEntityID" description="TC010: Search Customer by Business Entity ID (BE ID)" finished-at="2020-04-10T10:11:41Z" duration-ms="56513" status="PASS">
+        <test-method signature="SearchValidPriceList()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:18:52Z" name="SearchValidPriceList" description="TC001: Search Services Item of Distribution Catalog" finished-at="2020-04-16T17:19:13Z" duration-ms="21968" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchCustomerBusinessEntityID -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:11:41Z" name="TearDown" finished-at="2020-04-10T10:11:46Z" duration-ms="5309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="SetPropertyForWebDriver(org.testng.ITestResult)[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:11:46Z" name="SetPropertyForWebDriver" finished-at="2020-04-10T10:12:15Z" duration-ms="28385" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=SearchCustomerPartyID status=SUCCESS method=SearchTestCases.SearchCustomerPartyID()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetPropertyForWebDriver -->
-        <test-method signature="SearchCustomerPartyID()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:12:15Z" name="SearchCustomerPartyID" description="TC008: Search Customer by Party ID" finished-at="2020-04-10T10:13:09Z" duration-ms="54872" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchCustomerPartyID -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:13:09Z" name="TearDown" finished-at="2020-04-10T10:13:15Z" duration-ms="5242" status="PASS">
+        </test-method> <!-- SearchValidPriceList -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:19:13Z" name="TearDown" finished-at="2020-04-16T17:19:16Z" duration-ms="2287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="DataCleanUp()[pri:0, instance:TestCaseDesktopBrowser.automation.SearchTestCases@12e61fe6]" started-at="2020-04-10T10:13:15Z" name="DataCleanUp" finished-at="2020-04-10T10:13:15Z" duration-ms="284" status="PASS">
+        <test-method is-config="true" signature="DataCleanUp()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:19:16Z" name="DataCleanUp" finished-at="2020-04-16T17:19:21Z" duration-ms="5304" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DataCleanUp -->
-      </class> <!-- TestCaseDesktopBrowser.automation.SearchTestCases -->
-    </test> <!-- Search Customer TestCases -->
-  </suite> <!-- SearchCustomer - UI and CR Service -->
+        <test-method is-config="true" signature="reportFlush()[pri:0, instance:TestCaseUI.PriceSearchTestCases@793be5ca]" started-at="2020-04-16T17:19:22Z" name="reportFlush" finished-at="2020-04-16T17:19:23Z" duration-ms="1226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportFlush -->
+      </class> <!-- TestCaseUI.PriceSearchTestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

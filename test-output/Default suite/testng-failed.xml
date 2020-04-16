@@ -3,15 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCaseDesktopBrowser.automation.SearchTestCases">
+      <class name="TestCaseUI.PriceSearchTestCases">
         <methods>
-          <include name="DataSetup"/>
-          <include name="DataCleanUp"/>
-          <include name="SearchCustomerPartyID"/>
+          <include name="SearchSubscriptionMandaotryDistributionCatalog"/>
           <include name="TearDown"/>
           <include name="SetPropertyForWebDriver"/>
+          <include name="reportFlush"/>
+          <include name="DataSetup"/>
+          <include name="reportSetUp"/>
+          <include name="DataCleanUp"/>
         </methods>
-      </class> <!-- TestCaseDesktopBrowser.automation.SearchTestCases -->
+      </class> <!-- TestCaseUI.PriceSearchTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -13,16 +13,7 @@ public class CustomListener implements ITestListener{
 	
 	//private static int counter = 0;
 	public void onTestStart(ITestResult result) {
-		String[] testID=null;
-		String description = result.getMethod().getDescription();
-		testID = description.trim().split(":");
-		try {
-			SmartLogger.InitiateSmartLogging();
-			SmartLogger.PrintInfo("Initiating Testcase: " + testID[0]);
-	    	}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -68,13 +59,6 @@ public class CustomListener implements ITestListener{
 //			counter++;
 //			RetryFailedTestCases();
 //		}
-		try {
-			SmartLogger.MoveLogsToDestination();
-			SmartReporter.MoveExtentReportToDestination();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}
 	

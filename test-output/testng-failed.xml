@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [SearchCustomer - UI and CR Service]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Search Customer TestCases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCaseDesktopBrowser.automation.SearchTestCases">
+      <class name="TestCaseUI.PriceSearchTestCases">
         <methods>
-          <include name="DataSetup"/>
-          <include name="SearchCustomerAccountNumber"/>
-          <include name="DataCleanUp"/>
-          <include name="reportFlush"/>
-          <include name="reportSetUp"/>
+          <include name="SearchSubscriptionMandaotryDistributionCatalog"/>
           <include name="TearDown"/>
           <include name="SetPropertyForWebDriver"/>
+          <include name="reportFlush"/>
+          <include name="DataSetup"/>
+          <include name="reportSetUp"/>
+          <include name="DataCleanUp"/>
         </methods>
-      </class> <!-- TestCaseDesktopBrowser.automation.SearchTestCases -->
+      </class> <!-- TestCaseUI.PriceSearchTestCases -->
     </classes>
-  </test> <!-- Search Customer TestCases(failed) -->
-</suite> <!-- Failed suite [SearchCustomer - UI and CR Service] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

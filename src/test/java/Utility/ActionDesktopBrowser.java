@@ -1,17 +1,23 @@
 package Utility;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import HelperClass.SmartLogger;
+
 public class ActionDesktopBrowser {
 
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public ActionDesktopBrowser(WebDriver Idriver)
 	{
@@ -20,20 +26,9 @@ public class ActionDesktopBrowser {
 	
 	public void clickOnElement(WebElement element) throws Exception
 	{
-		if(element.isDisplayed())
-		    {
 			element.click();
-		    }
-		else
-		{
-			WaitForElementVisible(element, 10);
-			if(element.isDisplayed())
-		    {
-			element.click();
-		    }
-		}
 	}
-	
+
 	
 	public void SendTextinTextbox(WebElement element, String text) throws Exception
 	{
@@ -65,7 +60,6 @@ public class ActionDesktopBrowser {
 			{
 				return element.getText();
 			}
-			System.out.println("Element not found");
 			return "XXXX-----JUNK -----XXXX";
 		}
 	}
@@ -79,7 +73,7 @@ public class ActionDesktopBrowser {
         }
         catch (Exception e)
         {
-        	System.out.println("Exception caused: " + e);
+        	SmartLogger.PrintError("Exception caused: " + e);
             return false;
         }
         return false;
@@ -166,5 +160,41 @@ public class ActionDesktopBrowser {
 		public static void ImplicitWait(int seconds) throws Exception
 		{
 			UtilitiesWebDriver.GetWebDriverInstance().manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+		}
+
+		public void ScrollVerticalTillElementFound(WebElement element)
+		{
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView();", element);
+		}
+		
+		public void ScrollTillEndOfPage()
+		{
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		}
+		
+		public void ScrollHorizentalTillElementFound(WebElement element)
+		{
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView();", element);
+		}
+		
+		public void SwitchDriverControlToFrame(String iFrameID)
+		{
+			driver.switchTo().frame(iFrameID);
+		}
+
+		public void SwitchBackDriverContrlFromFrame()
+		{
+			driver.switchTo().defaultContent();
+		}
+		
+		public boolean IsElementDisplayed(List<WebElement> element)
+		{
+			if(element.size()==0)
+				return true;
+			else
+				return false;
 		}
 }

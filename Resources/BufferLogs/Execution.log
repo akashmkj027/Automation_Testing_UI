@@ -1,18 +1,58 @@
-2020-04-10 15:39:23,641 [main] INFO HelperClass.SmartLogger - Connected to MasterDB
-2020-04-10 15:39:29,617 [main] INFO HelperClass.SmartLogger - Connected to TestDB
-2020-04-10 15:39:43,704 [main] INFO HelperClass.SmartLogger - Browser Selected: ChromeDriver: chrome on XP (2d1f8fb7f7a0b77697237e486a681a89)
-2020-04-10 15:39:53,198 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
-2020-04-10 15:39:53,377 [main] INFO HelperClass.SmartLogger - Initiating Testcase: TC009
-2020-04-10 15:40:22,793 [main] INFO HelperClass.SmartLogger - Closing Driver: ChromeDriver: chrome on XP (2d1f8fb7f7a0b77697237e486a681a89)
-2020-04-10 15:40:23,731 [main] INFO HelperClass.SmartLogger - Closing Browser
-2020-04-10 15:40:35,677 [main] INFO HelperClass.SmartLogger - Browser Selected: ChromeDriver: chrome on XP (3e304b39817794012102ea2dfce3585b)
-2020-04-10 15:40:44,844 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
-2020-04-10 15:40:44,967 [main] INFO HelperClass.SmartLogger - Initiating Testcase: TC010
-2020-04-10 15:41:45,560 [main] INFO HelperClass.SmartLogger - Closing Driver: ChromeDriver: chrome on XP (3e304b39817794012102ea2dfce3585b)
-2020-04-10 15:41:46,669 [main] INFO HelperClass.SmartLogger - Closing Browser
-2020-04-10 15:41:57,936 [main] INFO HelperClass.SmartLogger - Browser Selected: ChromeDriver: chrome on XP (c9f5508ec8f5d09eb55d3ee00f670806)
-2020-04-10 15:42:15,058 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
-2020-04-10 15:42:15,169 [main] INFO HelperClass.SmartLogger - Initiating Testcase: TC008
-2020-04-10 15:43:09,932 [main] INFO HelperClass.SmartLogger - TestCase Passed
-2020-04-10 15:43:14,104 [main] INFO HelperClass.SmartLogger - Closing Driver: ChromeDriver: chrome on XP (c9f5508ec8f5d09eb55d3ee00f670806)
-2020-04-10 15:43:15,177 [main] INFO HelperClass.SmartLogger - Closing Browser
+2020-04-16 22:45:49,824 [main] INFO HelperClass.SmartLogger - Browser Selected: ChromeDriver: chrome on WINDOWS (1c23c9a9ddd03338b4a756e72b7e2c74)
+2020-04-16 22:46:06,535 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-16 22:46:06,682 [main] INFO HelperClass.SmartLogger - Initiating TestCase TC002: Search Product Item of Distribution Catalog
+2020-04-16 22:46:07,576 [main] INFO HelperClass.SmartLogger - Logging via Username: chris.stokes
+2020-04-16 22:46:07,836 [main] INFO HelperClass.SmartLogger - Clicked on Login Button
+2020-04-16 22:46:23,948 [main] INFO HelperClass.SmartLogger - Password Entered: ********
+2020-04-16 22:46:24,480 [main] INFO HelperClass.SmartLogger - Clicked on Sign in Button
+2020-04-16 22:46:50,302 [main] INFO HelperClass.SmartLogger - Clicked on Price Search Tab
+2020-04-16 22:46:52,358 [main] INFO HelperClass.SmartLogger - Selected catalog value: DISTRIBUTION_PRICING
+2020-04-16 22:46:52,590 [main] INFO HelperClass.SmartLogger - Selected Offer Catagory value: PRODUCTS_ONLY
+2020-04-16 22:47:24,565 [main] INFO HelperClass.SmartLogger - Price File Selected As: DISTRIBUTION_PRICING_PLUS_US
+2020-04-16 22:47:25,286 [main] INFO HelperClass.SmartLogger - Searching Price for Item Number: C1-LIC-VCM-1N
+2020-04-16 22:47:26,193 [main] INFO HelperClass.SmartLogger - Item Description Entered: Cisco ONE Promo license to manage one WAAS node
+2020-04-16 22:47:26,386 [main] INFO HelperClass.SmartLogger - Clicked on View Button
+2020-04-16 22:47:32,044 [main] INFO HelperClass.SmartLogger - All data in 1st Row is fetched from UI
+2020-04-16 22:47:38,064 [main] INFO HelperClass.SmartLogger - Product Number and Description of 1st Row in UI are asserted
+2020-04-16 22:47:38,065 [main] INFO HelperClass.SmartLogger - Results in UI Asserted
+2020-04-16 22:47:41,471 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-16 22:47:41,621 [main] INFO HelperClass.SmartLogger - Initiating TestCase TC003: Search Subscription Item of Distribution Catalog
+2020-04-16 22:47:41,649 [main] INFO HelperClass.SmartLogger - Application is already logged in
+2020-04-16 22:47:42,812 [main] INFO HelperClass.SmartLogger - Clicked on Price Search Tab
+2020-04-16 22:47:44,998 [main] INFO HelperClass.SmartLogger - Selected catalog value: DISTRIBUTION_PRICING
+2020-04-16 22:47:45,251 [main] INFO HelperClass.SmartLogger - Selected Offer Catagory value: SUBSCRIPTION_ITEM
+2020-04-16 22:47:53,006 [main] INFO HelperClass.SmartLogger - Price File Selected As: DISTRIBUTION_PRICING_PLUS_US
+2020-04-16 22:47:53,669 [main] INFO HelperClass.SmartLogger - Searching Price for Item Number: E2-N-HXDP
+2020-04-16 22:47:54,340 [main] INFO HelperClass.SmartLogger - Item Description Entered: Cisco Data Center EA for Hyperflex
+2020-04-16 22:47:54,518 [main] INFO HelperClass.SmartLogger - Clicked on View Button
+2020-04-16 22:48:00,819 [main] INFO HelperClass.SmartLogger - All data in 1st Row is fetched from UI
+2020-04-16 22:48:21,774 [main] INFO HelperClass.SmartLogger - Product Number and Description of 1st Row in UI are asserted
+2020-04-16 22:48:21,775 [main] INFO HelperClass.SmartLogger - Results in UI Asserted
+2020-04-16 22:48:24,560 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-16 22:48:24,711 [main] INFO HelperClass.SmartLogger - Initiating TestCase TC004: Search Subscription Mandatory Item of Distribution Catalog
+2020-04-16 22:48:24,738 [main] INFO HelperClass.SmartLogger - Application is already logged in
+2020-04-16 22:48:25,476 [main] INFO HelperClass.SmartLogger - Clicked on Price Search Tab
+2020-04-16 22:48:27,401 [main] INFO HelperClass.SmartLogger - Selected catalog value: DISTRIBUTION_PRICING
+2020-04-16 22:48:27,814 [main] INFO HelperClass.SmartLogger - Selected Offer Catagory value: SUBSCRIPTION_MANDATORY
+2020-04-16 22:48:28,187 [main] INFO HelperClass.SmartLogger - Price File Selected As: DISTRIBUTION_PRICING_PLUS_US
+2020-04-16 22:48:28,872 [main] INFO HelperClass.SmartLogger - Searching Price for Item Number: E2SC-A5508-TAMC-5Y
+2020-04-16 22:48:29,172 [main] INFO HelperClass.SmartLogger - Item Description Entered: 
+2020-04-16 22:48:29,336 [main] INFO HelperClass.SmartLogger - Clicked on View Button
+2020-04-16 22:48:29,339 [main] INFO HelperClass.SmartLogger - All data in 1st Row is fetched from UI
+2020-04-16 22:48:39,592 [main] ERROR HelperClass.SmartLogger - Description: Index 0 out of bounds for length 0
+2020-04-16 22:48:51,869 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-16 22:48:52,004 [main] INFO HelperClass.SmartLogger - Initiating TestCase TC001: Search Services Item of Distribution Catalog
+2020-04-16 22:48:52,028 [main] INFO HelperClass.SmartLogger - Application is already logged in
+2020-04-16 22:48:52,677 [main] INFO HelperClass.SmartLogger - Clicked on Price Search Tab
+2020-04-16 22:48:54,772 [main] INFO HelperClass.SmartLogger - Selected catalog value: DISTRIBUTION_PRICING
+2020-04-16 22:48:55,048 [main] INFO HelperClass.SmartLogger - Selected Offer Catagory value: SERVICE_ITEMS
+2020-04-16 22:48:55,486 [main] INFO HelperClass.SmartLogger - Price File Selected As: DISTRIBUTION_PRICING_PLUS_US
+2020-04-16 22:48:56,140 [main] INFO HelperClass.SmartLogger - Searching Price for Item Number: CON-SNT-C14451K9
+2020-04-16 22:48:56,983 [main] INFO HelperClass.SmartLogger - Item Description Entered: SNTC-8X5XNBD C1 ISR 4451 (4GE,3NIM,2SM,8G FLASH)
+2020-04-16 22:48:57,126 [main] INFO HelperClass.SmartLogger - Clicked on View Button
+2020-04-16 22:49:08,113 [main] INFO HelperClass.SmartLogger - All data in 1st Row is fetched from UI
+2020-04-16 22:49:13,973 [main] INFO HelperClass.SmartLogger - Product Number and Description of 1st Row in UI are asserted
+2020-04-16 22:49:13,974 [main] INFO HelperClass.SmartLogger - Results in UI Asserted
+2020-04-16 22:49:16,256 [main] INFO HelperClass.SmartLogger - Environment Name: TS3
+2020-04-16 22:49:20,500 [main] INFO HelperClass.SmartLogger - Closing Driver: ChromeDriver: chrome on WINDOWS (1c23c9a9ddd03338b4a756e72b7e2c74)
+2020-04-16 22:49:21,566 [main] INFO HelperClass.SmartLogger - Closing Browser

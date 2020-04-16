@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SearchCustomer - UI and CR Service" verbose="1">
-	<test name="Search Customer TestCases">
+<suite name="LPC UI Test Automation" verbose="1">
+	<test name="Price Search Test Cases">
 		<classes>
 			<class name="HelperClass.TestBase" />
-			<class name="TestCaseDesktopBrowser.automation.SearchTestCases" />
-			<!-- <class name="TestCaseDesktopBrowser.automation.HomeTestCases" /> -->
+			<class name="TestCaseUI.PriceSearchTestCases" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

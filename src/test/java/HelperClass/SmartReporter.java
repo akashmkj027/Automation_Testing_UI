@@ -22,7 +22,7 @@ public class SmartReporter {
 	public static void ExtentReportHTML()
 	{
 		htmlReport=new ExtentHtmlReporter(System.getProperty("user.dir") + "\\Resources\\BufferLogs\\ExecutionReport.html");
-		//htmlReport.loadXMLConfig(System.getProperty("user.dir") + "\\Resources\\ConfigurationalFiles\\SmartReport_Config.xml");
+		htmlReport.loadXMLConfig(System.getProperty("user.dir") + "\\Resources\\ConfigurationalFiles\\SmartReport_Config.xml");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReport);
 	}

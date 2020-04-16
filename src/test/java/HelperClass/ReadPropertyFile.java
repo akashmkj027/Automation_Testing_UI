@@ -31,13 +31,11 @@ public class ReadPropertyFile {
 	public String GetBrowserLoginValidUserName() 
 	{
 		String sUserName = new String(decoder.decode(prop.getProperty("VALID_USERNAME")));
-		System.out.println("Username: " + sUserName);
 		return sUserName;
 	}
 	public String GetBrowserLoginValidPassword() 
 	{
 		String sPassword = new String(decoder.decode(prop.getProperty("VALID_PASSWORD")));
-		System.out.println("Password: " + sPassword);
 		return sPassword;
 	}
 	public String GetBrowserLoginInvalidUserName() 
